@@ -84,10 +84,11 @@ class MainActivity : ComponentActivity() {
 
 //                    INTENT LESSON
                     Button(onClick = {
-                        Intent(applicationContext, SecondActivity::class.java).also {
+                        Intent(applicationContext, SecondActivity::class.java).apply{
+                            putExtra("somethingNew", 40)
+                        }.also {
                             startActivity(it)
-
-                        }.putExtra("somethingNew", 40)
+                        }
                     }) {
                         Text(text = "Click me")
                     }
